@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --color: #ffffff;
+    --background: #f7b5f3;
+  }
+
+body {
+    height: 100vh;
+    background: var(--background);
+    color: var(--color);
+    transition: 4s;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.img {
+    cursor: pointer;
+    height: 500px;
+    width: auto;
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000bf;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+    align-items: center;
+    height: 100vh;
+}
+
+.info {
+    margin-top: 5%;
+}
+
+.headerText {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    animation: swing 4s linear infinite;
+    width: 100%;
+    transition: 4s;
+    text-shadow: -1px -1px 0px var(--background),
+      3px 3px 0px var(--background),
+      6px 6px 0px #00000055;
+  }
+
+@keyframes swing {
+    20% {
+        transform: rotate3d(0, 0, 1, 10deg);
+    }
+
+    10% {
+        transform: scale(1.2);
+    }
+
+    40% {
+        transform: rotate3d(0, 0, 1, -10deg);
+
+    }
+}
+
+.gifDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2.5%;
+    height: 65%;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #575757;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+.preview{
+    width: auto;
+    height: 500px;
+}
+
+.newGifBtn {
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    height: 60px;
+    font-family: 'Press Start 2P', cursive;
+    color: aliceblue;
+    font-size: large;
+    background-color: #ff52f5;
+    animation: scaling 2s linear infinite;
+    transition: transform 1s ease-in-out;
+    cursor: pointer;
+    transition: background-color 1s ease-in-out;
+}
+
+.newGifBtn:hover {
+    background-color: #fd26f2;
+}
+
+
+@keyframes scaling {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes easing {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
