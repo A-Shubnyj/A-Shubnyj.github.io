@@ -65,12 +65,12 @@ let fetchPics = () => {
             gifElement.onload = () => {
                 titleText.textContent = title
                 gifDiv.replaceChild(gifElement, gifPreview);
-                newGifButton.classList.remove( "onclic" );
-                newGifButton.classList.add( "validate");
-                    setTimeout(() => {
-                        newGifButton.classList.remove( "validate" );
-                    }, 1750 );
-                  }
+                newGifButton.classList.remove("onclic");
+                newGifButton.classList.add("validate");
+                setTimeout(() => {
+                    newGifButton.classList.remove("validate");
+                }, 1750);
+            }
         })
         .catch(err => console.log(err)
         )
@@ -80,7 +80,7 @@ let fetchPics = () => {
 //     $( "#button" ).click(function() {
 //       $( "#button" ).addClass( "onclic", 250, validate);
 //     });
-  
+
 //     function validate() {
 //       setTimeout(function() {
 //         $( "#button" ).removeClass( "onclic" );
@@ -100,7 +100,7 @@ fetchPics();
 newGifButton.addEventListener('click', () => {
     newGifButton.classList.add("onclic");
     fetchPics();
-    
+
     const color = colors[Math.floor(Math.random() * colors.length)]
     document.body.style.setProperty('--background', color)
 })
@@ -120,8 +120,8 @@ let fullScreen = () => {
     }
 }
 gifDiv.addEventListener('click', () => {
-    if(gifElement.complete == true){
-    fullScreen()
+    if (gifElement.complete == true) {
+        fullScreen()
     }
 })
 

@@ -1,215 +1,227 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-    --color: #ffffff;
-    --background: #f7b5f3;
-  }
+  --color: #ffffff;
+  --background: #f7b5f3;
+}
 
 body {
-    height: 100vh;
-    background: var(--background);
-    color: var(--color);
-    transition: 4s;
-    overflow: hidden;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  height: 100vh;
+  background: var(--background);
+  color: var(--color);
+  transition: 4s;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .img {
-     cursor: pointer;
-    width: auto;
-    max-width: 90%;
-    height: 500px;
-    @media screen and (max-width: 720px) {
-        height:auto;
-    }
-        @media screen and (max-height: 600px) {
-        max-height:50%;
-    }
+  cursor: pointer;
+  width: auto;
+  max-width: 90%;
+  height: 500px;
+
+  @media screen and (max-width: 720px) {
+    height: auto;
+  }
+
+  @media screen and (max-height: 600px) {
+    max-height: 50%;
+  }
 }
 
 .overlay {
-    display: none;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    background-color: #000000bf;
-    z-index: 9999;
-    cursor: pointer;
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  background-color: #000000bf;
+  z-index: 9999;
+  cursor: pointer;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    margin: 1%;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  align-items: center;
+  height: 100vh;
 }
 
 .info {
-    margin-top: 20px;
-    height: 15%;
-    max-width: 90%;
-    display: flex;
-    align-items: center;
+  margin-top: 20px;
+  height: 15%;
+  max-width: 90%;
+  display: flex;
+  align-items: center;
 }
 
-.BtnContainer{
-    height: 10%;
-    display: flex;
-    align-items: center;
+.BtnContainer {
+  height: 10%;
+  display: flex;
+  align-items: center;
 }
 
 .headerText {
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
-    animation: swing 4s linear infinite;
-    width: 100%;
-    transition: 4s;
-    text-shadow: -1px -1px 0px var(--background),
-      3px 3px 0px var(--background),
-      6px 6px 0px #00000055;
-          @media screen and (max-width: 720px) {
-        font-size: medium;
-    }
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  animation: swing 4s linear infinite;
+  width: 100%;
+  transition: 4s;
+  text-shadow: -1px -1px 0px var(--background),
+    3px 3px 0px var(--background),
+    6px 6px 0px #00000055;
+
+  @media screen and (max-width: 720px) {
+    font-size: medium;
   }
+}
 
 @keyframes swing {
-    20% {
-        transform: rotate3d(0, 0, 1, 10deg);
-    }
+  20% {
+    transform: rotate3d(0, 0, 1, 10deg);
+  }
 
-    10% {
-        transform: scale(1.2);
-    }
+  10% {
+    transform: scale(1.2);
+  }
 
-    40% {
-        transform: rotate3d(0, 0, 1, -10deg);
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
 
-    }
+  }
 }
 
 .gifDiv {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 10px;
-    height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+  height: 60%;
 }
 
 .loader {
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid #575757;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #575757;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
 
-.preview{
-    width: auto;
-    max-width: 90%;
-    height: 500px;
-        @media screen and (max-width: 720px) {
-        height:auto;
-        min-width: 80%;
-    }
-        @media screen and (max-height: 600px) {
-        max-height:50%;
-    }
+.preview {
+  width: auto;
+  max-width: 90%;
+  height: 500px;
+
+  @media screen and (max-width: 720px) {
+    height: auto;
+    min-width: 80%;
+  }
+
+  @media screen and (max-height: 600px) {
+    max-height: 50%;
+  }
 }
 
-.fullscreen{
-    width: 100vh;
-    max-width: 100%;
+.fullscreen {
+  width: 100vh;
+  max-width: 100%;
 }
 
 .newGifBtn {
-    font-family: 'Press Start 2P', cursive;
-    outline:none;
-    height: 60px;
-    text-align: center;
-    width: 150px;
-    border-radius:60px;
-    background: #ffffff00;
-    mix-blend-mode: color-burn;
-    border: 3px solid #e9164b;
-    color: #e9164b;
-    letter-spacing:1px;
-    text-shadow:0;
-    cursor: pointer;
-    transition: all 0.25s ease;
+  font-family: 'Press Start 2P', cursive;
+  outline: none;
+  height: 60px;
+  text-align: center;
+  width: 150px;
+  border-radius: 60px;
+  background: #ffffff00;
+  mix-blend-mode: color-burn;
+  border: 3px solid #e9164b;
+  color: #e9164b;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .newGifBtn:hover {
-      color:white !important;
-      background: #e9164b;
-    }
-    .newGifBtn:active {
-      letter-spacing: 2px ;
-    }
-    .newGifBtn:after {
-      content:"New";
-    }
-  .onclic {
-    width: 60px;
-    border-color:#ffbcfc;
-    border-width:4px;
-    font-size:0;
-    border-left-color:#e9164b;
-    animation: rotating 2s 0.25s linear infinite;
+  color: white !important;
+  background: #e9164b;
+}
+
+.newGifBtn:active {
+  letter-spacing: 2px;
+}
+
+.newGifBtn:after {
+  content: "New";
+}
+
+.onclic {
+  width: 60px;
+  border-color: #ffbcfc;
+  border-width: 4px;
+  font-size: 0;
+  border-left-color: #e9164b;
+  animation: rotating 2s 0.25s linear infinite;
+}
+
+.onclic:after {
+  content: "";
+}
+
+.onclic:hover {
+  color: #e9164b;
+  background: rgba(255, 255, 255, 0);
+}
+
+.validate {
+  font-size: 20px;
+  color: white;
+  background: #e9164b;
+
+  &:after {
+    content: "✔";
   }
-    .onclic:after {
-      content:"";
-    }
-    .onclic:hover {
-      color:#e9164b;
-      background: rgba(255, 255, 255, 0);
-    }
-  
-  .validate {
-    font-size:20px;
-    color: white;
-    background:#e9164b;
-    &:after {
-      content:"✔";
-    }
+}
+
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
   }
 
-  
-  @keyframes rotating {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
   }
+}
 
 
 @keyframes easing {
-    0% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
 
-    50% {
-        transform: scale(1.2);
-    }
+  50% {
+    transform: scale(1.2);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
