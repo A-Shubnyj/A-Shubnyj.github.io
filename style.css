@@ -35,6 +35,7 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
+    align-items: center;
     background-color: #000000bf;
     z-index: 9999;
     cursor: pointer;
@@ -113,46 +114,81 @@ body {
     max-width: 90%;
     height: 500px;
         @media screen and (max-width: 720px) {
-        height:auto
+        height:auto;
+        min-width: 80%;
     }
         @media screen and (max-height: 600px) {
         max-height:50%;
     }
 }
 
+.fullscreen{
+    width: 100vh;
+    max-width: 100%;
+}
+
 .newGifBtn {
-    border: none;
-    border-radius: 8px;
-    width: 150px;
-    height: 60px;
     font-family: 'Press Start 2P', cursive;
-    color: aliceblue;
-    font-size: large;
-    background-color: #ff52f5;
-    animation: scaling 2s linear infinite;
-    transition: transform 1s ease-in-out;
+    outline:none;
+    height: 60px;
+    text-align: center;
+    width: 150px;
+    border-radius:60px;
+    background: #ffffff00;
+    mix-blend-mode: color-burn;
+    border: 3px solid #e9164b;
+    color: #e9164b;
+    letter-spacing:1px;
+    text-shadow:0;
     cursor: pointer;
-    transition: background-color 1s ease-in-out;
+    transition: all 0.25s ease;
 }
 
 .newGifBtn:hover {
-    background-color: #fd26f2;
-}
-
-
-@keyframes scaling {
-    0% {
-        transform: scale(1);
+      color:white !important;
+      background: #e9164b;
     }
-
-    50% {
-        transform: scale(1.2);
+    .newGifBtn:active {
+      letter-spacing: 2px ;
     }
-
-    100% {
-        transform: scale(1);
+    .newGifBtn:after {
+      content:"New";
     }
-}
+  .onclic {
+    width: 60px;
+    border-color:#ffbcfc;
+    border-width:4px;
+    font-size:0;
+    border-left-color:#e9164b;
+    animation: rotating 2s 0.25s linear infinite;
+  }
+    .onclic:after {
+      content:"";
+    }
+    .onclic:hover {
+      color:#e9164b;
+      background: rgba(255, 255, 255, 0);
+    }
+  
+  .validate {
+    font-size:20px;
+    color: white;
+    background:#e9164b;
+    &:after {
+      content:"✔";
+    }
+  }
+
+  
+  @keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 
 @keyframes easing {
     0% {

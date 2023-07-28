@@ -56,28 +56,51 @@ let fetchPics = () => {
             let gifURL = data.data.images.original.url
             let gifPreviewURL = data.data.images.preview_webp.url
             let title = data.data.title
-            titleText.textContent = title
+            titleText.textContent = 'Загрузка'
             gifElement.className = 'img'
             gifPreview.className = 'preview'
             gifPreview.setAttribute('src', `${gifPreviewURL}`)
             gifElement.setAttribute('src', `${gifURL}`)
             gifDiv.replaceChild(gifPreview, loader)
             gifElement.onload = () => {
+                titleText.textContent = title
                 gifDiv.replaceChild(gifElement, gifPreview);
-
-            }
-
-
+                newGifButton.classList.remove( "onclic" );
+                newGifButton.classList.add( "validate");
+                    setTimeout(() => {
+                        newGifButton.classList.remove( "validate" );
+                    }, 1750 );
+                  }
         })
         .catch(err => console.log(err)
         )
 }
 
+// $(function() {
+//     $( "#button" ).click(function() {
+//       $( "#button" ).addClass( "onclic", 250, validate);
+//     });
+  
+//     function validate() {
+//       setTimeout(function() {
+//         $( "#button" ).removeClass( "onclic" );
+//         $( "#button" ).addClass( "validate", 450, callback );
+//       }, 2250 );
+//     }
+//       function callback() {
+//         setTimeout(function() {
+//           $( "#button" ).removeClass( "validate" );
+//         }, 1250 );
+//       }
+//     });
+
 fetchPics();
 
 
 newGifButton.addEventListener('click', () => {
+    newGifButton.classList.add("onclic");
     fetchPics();
+    
     const color = colors[Math.floor(Math.random() * colors.length)]
     document.body.style.setProperty('--background', color)
 })
@@ -86,15 +109,9 @@ let fullScreen = () => {
     let FSgif = new Image();
     if (gifElement.hasAttribute('src') == true) {
         FSgif.setAttribute('src', gifElement.getAttribute('src'));
+        FSgif.classList.add('fullscreen')
         overlay.style.display = 'flex'
-        console.log(window.innerWidth)
-        if (window.innerWidth > 720){
-        overlay.style.alignItems = "stretch"
-        } else {
-        overlay.style.alignItems = "center"  
-        }
         overlay.style.justifyContent = "space-evenly"
-        FSgif.style.maxWidth = '100%'
         overlay.appendChild(FSgif)
         overlay.addEventListener('click', () => {
             overlay.style.display = 'none'
@@ -103,6 +120,8 @@ let fullScreen = () => {
     }
 }
 gifDiv.addEventListener('click', () => {
+    if(gifElement.complete == true){
     fullScreen()
+    }
 })
 
