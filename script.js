@@ -87,7 +87,8 @@ let fullScreen = () => {
     if (gifElement.hasAttribute('src') == true) {
         FSgif.setAttribute('src', gifElement.getAttribute('src'));
         overlay.style.display = 'flex'
-        if (screen.width > '720px'){
+        console.log(window.innerWidth)
+        if (window.innerWidth > 720){
         overlay.style.alignItems = "stretch"
         } else {
         overlay.style.alignItems = "center"  
